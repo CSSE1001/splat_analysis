@@ -1,0 +1,447 @@
+{
+  "event_decision.py": [
+    {
+      "name": "event_init_sloc",
+      "location": "Event.__init__",
+      "message": "Your Event __init__ method probably doesn't have to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "event_init_multi",
+      "location": "Event.__init__",
+      "message": "Your Event __init__ needs a properly formatted docstring. See Week 3 Course Notes on Commenting for details",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 5,
+      "upper": 25
+    },
+    {
+      "name": "event_get_time_sloc",
+      "location": "Event.get_time",
+      "message": "Your Event get_time method probably doesn't have to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_outdoors_sloc",
+      "location": "Event.get_outdoors",
+      "message": "Your Event get_outdoors method probably doesn't have to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_cover_available_sloc",
+      "location": "Event.get_cover_available",
+      "message": "Your Event get_cover_available method probably doesn't have to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_name_sloc",
+      "location": "Event.get_name",
+      "message": "Your Event get_name method probably doesn't have to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_str_formatter",
+      "location": "Event.__str__",
+      "message": "Consider using a string formatter for Event.__str__",
+      "type": "not_contains",
+      "pattern": "+"
+    },
+
+    {
+      "name": "event_decision_temperature_cc",
+      "location": "EventDecision._temperature_factor",
+      "message": "Your EventDecision _temperature_factor probably shouldn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 17
+    },
+    {
+      "name": "event_decision_temperature_h2",
+      "location": "EventDecision._temperature_factor",
+      "message": "Your EventDecision _temperature_factor may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 44
+    },
+    {
+      "name": "event_decision_temperature_sloc",
+      "location": "EventDecision._temperature_factor",
+      "message": "Your EventDecision _temperature_factor probably doesn't need to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 35
+    },
+    {
+      "name": "event_decision_rain_cc",
+      "location": "EventDecision._rain_factor",
+      "message": "Your EventDecision _rain_factor probably shouldn't have to be so complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 9
+    },
+    {
+      "name": "event_decision_rain_h2",
+      "location": "EventDecision._rain_factor",
+      "message": "Your EventDecision _rain_factor may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 27
+    },
+    {
+      "name": "event_decision_rain_sloc",
+      "location": "EventDecision._rain_factor",
+      "message": "Your EventDecision _rain_factor probably doesn't need to be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 35
+    },
+    {
+      "name": "event_decision_advisability_sloc",
+      "location": "EventDecision.advisability",
+      "message": "Your EventDecision advisability method probably doesn't have to be so long. Are you rewriting functionality you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+    {
+      "name": "event_decision_advisability_cc",
+      "location": "EventDecision.advisability",
+      "message": "You may be able to make your EventDecision advisability method less complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2
+    }
+  ],
+
+  "prediction.py": [
+    {
+      "name": "simple_prediction_init_sloc",
+      "location": "SimplePrediction.__init__",
+      "message": "Your SimplePrediction __init__ method probably shouldn't be so long. Are you rewriting functionality you've written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 4
+    },
+    {
+      "name": "simple_prediction_init_multi",
+      "location": "SimplePrediction.__init__",
+      "message": "Your SimplePrediction __init__ method needs a properly formatted docstring. See Week 3 Course Notes on Commenting for details",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 0,
+      "upper": 3
+    },
+
+    {
+      "name": "simple_prediction_rain_cc",
+      "location": "SimplePrediction.chance_of_rain",
+      "message": "Your SimplePrediction chance_of_rain method probably shouldn't have to be so complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2
+    },
+    {
+      "name": "simple_prediction_high_cc",
+      "location": "SimplePrediction.high_temperature",
+      "message": "Your SimplePrediction high_temperature method probably shouldn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_high_sloc",
+      "location": "SimplePrediction.high_temperature",
+      "message": "Your SimplePrediction high_temperature method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+    {
+      "name": "simple_prediction_low_cc",
+      "location": "SimplePrediction.low_temperature",
+      "message": "Your SimplePrediction low_temperature method probably shouldn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_low_sloc",
+      "location": "SimplePrediction.low_temperature",
+      "message": "Your SimplePrediction low_temperature method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+
+    {
+      "name": "simple_prediction_humidity_sloc",
+      "location": "SimplePrediction.humidity",
+      "message": "Your SimplePrediction humidity method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "simple_prediction_humidity_cc",
+      "location": "SimplePrediction.humidity",
+      "message": "Your SimplePrediction humidity method probably doesn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2
+    },
+    {
+      "name": "simple_prediction_wind_speed_sloc",
+      "location": "SimplePrediction.wind_speed",
+      "message": "Your SimplePrediction wind_speed method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "simple_prediction_wind_speed_cc",
+      "location": "SimplePrediction.wind_speed",
+      "message": "Your SimplePrediction wind_speed method probably doesn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2
+    },
+    {
+      "name": "simple_prediction_cloud_cover_sloc",
+      "location": "SimplePrediction.cloud_cover",
+      "message": "Your SimplePrediction cloud_cover method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "simple_prediction_cloud_cover_cc",
+      "location": "SimplePrediction.cloud_cover",
+      "message": "Your SimplePrediction cloud_cover method probably doesn't have to be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2
+    },
+
+    {
+      "name": "sophisticated_prediction_init_sloc",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "Your SophisticatedPrediction __init__ method probably shouldn't be so long. Are you rewriting functionality you've written elsewhere? Are you splitting up key ideas into functions?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 6
+    },
+    {
+      "name": "sophisticated_prediction_init_multi",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "Your SophisticatedPrediction __init__ method needs a properly formatted docstring. See Week 3 Course Notes on Commenting for details",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 0,
+      "upper": 3
+    },
+
+    {
+      "name": "sophisticated_prediction_rain_sloc",
+      "location": "SophisticatedPrediction.chance_of_rain",
+      "message": "Your SophisticatedPrediction chance_of_rain method probably shouldn't be so long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 16
+    },
+    {
+      "name": "sophisticated_prediction_rain_cc",
+      "location": "SophisticatedPrediction.chance_of_rain",
+      "message": "Your SophisticatedPrediction chance_of_rain method probably shouldn't be so complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "sophisticated_prediction_rain_h2",
+      "location": "SophisticatedPrediction.chance_of_rain",
+      "message": "Your SophisticatedPrediction chance_of_rain method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 13
+    },
+
+    {
+      "name": "sophisticated_prediction_high_sloc",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "Your SophisticatedPrediction high_temperature method probably shouldn't be so long. Are you rewriting functionality that you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_high_cc",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "Your SophisticatedPrediction high_temperature method probably shouldn't be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "sophisticated_prediction_high_h2",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "Your SophisticatedPrediction high_temperature method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 10
+    },
+
+    {
+      "name": "sophisticated_prediction_low_sloc",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "Your SophisticatedPrediction low_temperature method probably shouldn't be so long. Are you rewriting functionality that you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_low_cc",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "Your SophisticatedPrediction low_temperature method probably shouldn't be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "sophisticated_prediction_low_h2",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "Your SophisticatedPrediction low_temperature method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 10
+    },
+
+    {
+      "name": "sophisticated_prediction_humidity_sloc",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "Your SophisticatedPrediction humidity method probably shouldn't be so long. Are you rewriting functionality that you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 11
+    },
+    {
+      "name": "sophisticated_prediction_humidity_cc",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "Your SophisticatedPrediction humidity method probably shouldn't be so complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "sophisticated_prediction_humidity_h2",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "Your SophisticatedPrediction humidity method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 7
+    },
+
+    {
+      "name": "sophisticated_prediction_wind_sloc",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "Your SophisticatedPrediction wind_speed method probably shouldn't be so long. Are you rewriting functionality that you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_wind_cc",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "Your SophisticatedPrediction wind_speed method probably shouldn't be so complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "sophisticated_prediction_wind_h2",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "Your SophisticatedPrediction wind_speed method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 9
+    },
+
+    {
+      "name": "sophisticated_prediction_cloud_sloc",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "Your SophisticatedPrediction cloud_cover method probably shouldn't be so long. Are you rewriting functionality that you've already written elsewhere?",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 9
+    },
+    {
+      "name": "sophisticated_prediction_cloud_cc",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "Your SophisticatedPrediction cloud_cover method probably shouldn't be so complex. You may find the python builtins max and/or min useful",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "sophisticated_prediction_cloud_h2",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "Your SophisticatedPrediction cloud_cover method may be using excessive variables or be overly convoluted",
+      "type": "metric",
+      "metric": "h2",
+      "lower": 0,
+      "upper": 7
+    }
+  ]
+}

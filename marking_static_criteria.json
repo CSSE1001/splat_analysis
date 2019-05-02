@@ -1,0 +1,135 @@
+{
+  "event_decision.py": [
+    {
+      "name": "event_single_letter_var",
+      "location": "Event",
+      "message": "Usage of single letter variable in Event",
+      "type": "contains",
+      "pattern": "\\b[a-zA-z]\\s*="
+    },
+    {
+      "name": "event_decision_single_letter_var",
+      "location": "EventDecision",
+      "message": "Usage of single letter variable in EventDecision",
+      "type": "contains",
+      "pattern": "\\b[a-zA-z]\\s*="
+    },
+
+    {
+      "name": "event_decision_event_class",
+      "location": "EventDecision",
+      "message": "Event class used instead of object in EventDecision",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bEvent\\."
+    },
+
+    {
+      "name": "event_decision_event_private_vars",
+      "location": "EventDecision",
+      "message": "Event private variables accessed in EventDecision",
+      "type": "contains",
+      "pattern": "(?<!self)\\._time|(?<!self)\\._outdoors|(?<!self)\\._cover_available|(?<!self)\\._name"
+    },
+    {
+      "name": "user_interaction_event_private_vars",
+      "location": "UserInteraction",
+      "message": "Event private variables accessed in UserInteraction",
+      "type": "contains",
+      "pattern": "(?<!self)\\._time|(?<!self)\\._outdoors|(?<!self)\\._cover_available|(?<!self)\\._name"
+    }
+  ],
+  "prediction.py": [
+    {
+      "name": "simple_single_letter_var",
+      "location": "SimplePrediction",
+      "message": "Usage of single letter variable in SimplePrediction",
+      "type": "contains",
+      "pattern": "\\b[a-zA-z]\\s*="
+    },
+    {
+      "name": "sophisticated_single_letter_var",
+      "location": "SophisticatedPrediction",
+      "message": "Usage of single letter variable in SophisticatedPrediction",
+      "type": "contains",
+      "pattern": "\\b[a-zA-z]\\s*="
+    },
+
+    {
+      "name": "simple_weather_data_item_class",
+      "location": "SimplePrediction",
+      "message": "WeatherDataItem class used instead of object in SimplePrediction",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherDataItem\\."
+    },
+    {
+      "name": "sophisticated_weather_data_item_class",
+      "location": "SophisticatedPrediction",
+      "message": "WeatherDataItem class used instead of object in SophisticatedPrediction",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherDataItem\\."
+    },
+    {
+      "name": "simple_weather_data_class",
+      "location": "SimplePrediction",
+      "message": "WeatherData class used instead of object in SimplePrediction",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherData\\."
+    },
+    {
+      "name": "sophisticated_weather_data_class",
+      "location": "SophisticatedPrediction",
+      "message": "WeatherData class used instead of object in SophisticatedPrediction",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherData\\."
+    },
+
+    {
+      "name": "simple_inherit_weather",
+      "location": "SimplePrediction",
+      "message": "SimplePrediction does not inherit from WeatherPrediction",
+      "type": "contains",
+      "pattern": "class SimplePrediction(WeatherPrediction)"
+    },
+    {
+      "name": "sophisticated_inherit_simple",
+      "location": "SophisticatedPrediction",
+      "message": "SophisticatedPrediction does not inherit from SimplePrediction",
+      "type": "contains",
+      "pattern": "class SophisticatedPrediction(SimplePrediction)"
+    },
+    {
+      "name": "simple_super_init",
+      "location": "SimplePrediction.__init__",
+      "message": "SimplePrediction does not call super().__init__",
+      "type": "contains",
+      "pattern": "super()\\.__init__"
+    },
+    {
+      "name": "sophisticated_super_init",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "SophisticatedPrediction does not call super().__init__",
+      "type": "contains",
+      "pattern": "super()\\.__init__"
+    },
+    {
+      "name": "simple_weather_data_private_vars",
+      "location": "SimplePrediction",
+      "message": "WeatherDataItem private variables accessed in SimplePrediction",
+      "type": "contains",
+      "pattern": "(?<!self)\\._rain|(?<!self)\\._temperature_high|(?<!self)\\._temperature_low|(?<!self)\\._humidity|(?<!self)\\._wind_speed_average|(?<!self)\\._wind_speed_max|(?<!self)\\._wind_direction|(?<!self)\\._cloud_cover|(?<!self)\\._air_pressure"
+    },
+    {
+      "name": "sophisticated_weather_data_private_vars",
+      "location": "SophisticatedPrediction",
+      "message": "WeatherDataItem private variables accessed in SophisticatedPrediction",
+      "type": "contains",
+      "pattern": "(?<!self)\\._rain|(?<!self)\\._temperature_high|(?<!self)\\._temperature_low|(?<!self)\\._humidity|(?<!self)\\._wind_speed_average|(?<!self)\\._wind_speed_max|(?<!self)\\._wind_direction|(?<!self)\\._cloud_cover|(?<!self)\\._air_pressure"
+    },
+    {
+      "name": "sophisticated_get_number_days_exists",
+      "location": "SophisticatedPrediction.get_number_days",
+      "message": "SophisticatedPrediction explicitly defines get_number_days",
+      "type": "not_exists"
+    }
+  ]
+}

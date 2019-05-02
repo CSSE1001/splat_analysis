@@ -1,0 +1,103 @@
+{
+  "program_structured_readable": {
+    "rules": {},
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  },
+  "identifier_names": {
+    "rules": {
+      "event_single_letter_var": "major",
+      "event_decision_single_letter_var": "major",
+      "simple_single_letter_var": "major",
+      "sophisticated_single_letter_var": "major"
+    },
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  },
+  "algorithmic_logic": {
+    "rules": {},
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  },
+  "methods_well_designed": {
+    "rules": {},
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  },
+  "difference_classes_instances": {
+    "rules": {
+      "event_decision_event_class": "major",
+      "simple_weather_data_item_class": "major",
+      "sophisticated_weather_data_item_class": "major",
+      "simple_weather_data_class": "major",
+      "sophisticated_weather_data_class": "major"
+    },
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  },
+  "encapsulation_inheritance": {
+    "rules": {},
+    "acceptable": [
+      {
+        "score": 1,
+        "major": 0,
+        "minor": 0
+      },
+      {
+        "score": 0.5,
+        "major": 2,
+        "minor": 0
+      }
+    ]
+  }
+}
