@@ -5,7 +5,39 @@ import criteria_checker as CC
 import rubric_converter as RC
 
 class Analyser:
-    def __init__(self, sources, criteria_path="marking_static_criteria.json", criteria=None, rubric_path="marking_rubric_convert.json", rubric=None):
+    def __init__(self, sources,
+                 criteria_path="marking_static_criteria.json", criteria=None,
+                 rubric_path="marking_rubric_convert.json", rubric=None):
+        """
+        The main entry class for the static analysis and friends. Should only
+        need to access this class if all goes well.
+
+        You should supply one of (criteria_path, criteria) and one of
+        (rubric_path, rubric), otherwise can leave both blank to use
+        the default files
+
+        Parameters:
+            {str: str} sources: Dictionary mapping file name to file contents
+                    See '__main__' for example 
+            (str) criteria_path: file path to criteria json
+            (dict) criteria: dictionary of criteria json,
+                        See 'marking_static_criteria.json' as an example
+            (str) rubric_path: file path to rubric json
+            (dict) rubric: dictionary of rubric json,
+                        See 'marking_rubric_convert.json' as an example
+
+        An example of usage is in the '__main__', but should basically
+        look this:
+
+        a = Analyser() #<-- can add arguments as necessary
+        a.analyse() #<-- runs the analysis stuff and sets internal results
+
+        #After analyse, use any of these methods to get data back
+        a.get_static_results()
+        a.get_static_messages()
+        a.get_rubric_data()
+        
+        """
         self._results = None
         self._sources = sources
 
@@ -57,29 +89,71 @@ class Analyser:
         self._rubric_data = rc.get_results()
 
     def get_static_results(self):
+        """
+        Returns a list of dictionaries corresponding to the criteria json used
+        for analysis.
+
+        Should end up looking like this:
+
+        [
+            {
+                'name': 'unique_name_of_the_static_rule'
+                'location': 'location_str'   #<-- eg. Event.__init__
+                'status': 'pass' / 'fail' / 'not_attempted'
+                'message': 'message to marker'
+            },
+            {...}
+        ...
+        ]
+        """
         return [val for val in self._static_results.values()]
 
     def get_static_messages(self):
+        """
+        Returns a list of strings that contain all the filtered messages
+        to display to the marker. Literally just filtered messages from
+        the above method, based on which were failed
+        """
         return [rule['message']
                 for rule in self.get_static_results()
                 if rule['status'] == CC.FAIL]
 
     def get_rubric_data(self):
+        """
+        Returns the suggested rubric based on the supplied rubric json as
+        a dictionary. Should correspond to the 6 contruct criteria.
+        For example, using marking_rubric_convert.json will return something
+        like:
+
+        {
+            "program_structured_readable": 1,
+            "identifier_names": 1,
+            "algorithmic_logic": 1,
+            "methods_well_designed": 1
+            "difference_classes_instances": 1,
+            "encapsulation_inheritance": 1
+        }
+
+        The keys of this dictionary are determined by the top level names
+        in the rubric json
+
+        Returns:
+            {str: float}
+        """
         return self._rubric_data
 
     def get_score(self):
         return self._score
 
-if __name__ == '__main__':
-    pass
-    sources = {}
-    with open('prediction.py') as prediction, open('event_decision.py') as event:
-        sources['prediction.py'] = prediction.read()
-        sources['event_decision.py'] = event.read()
+# if __name__ == '__main__':
+#     sources = {}
+#     with open('prediction.py') as prediction, open('event_decision.py') as event:
+#         sources['prediction.py'] = prediction.read()
+#         sources['event_decision.py'] = event.read()
 
-    from pprint import pprint
-    a = Analyser(sources)
-    a.analyse()
+#     from pprint import pprint
+#     a = Analyser(sources)
+#     a.analyse()
     # pprint(a.get_static_results())
     # pprint(a.get_static_messages())
-    pprint(a.get_rubric_data())
+    # pprint(a.get_rubric_data())
