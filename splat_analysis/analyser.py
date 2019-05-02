@@ -1,8 +1,8 @@
 import json
 
-import static_analyser as SA
-import criteria_checker as CC
-import rubric_converter as RC
+import splat_analysis.static_analyser as SA
+import splat_analysis.criteria_checker as CC
+import splat_analysis.rubric_converter as RC
 
 class Analyser:
     def __init__(self, sources,

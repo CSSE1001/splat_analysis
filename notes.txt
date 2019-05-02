@@ -28,7 +28,7 @@ Will probs look something like this (again, more detailed in analysis.py):
         sources['event_decision.py'] = event.read()
 
 
-    a = Analyser()
+    a = Analyser(sources)
     a.analyse()
 
     a.get_static_results()

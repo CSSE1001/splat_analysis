@@ -1,4 +1,4 @@
-from criteria_checker import FAIL
+from splat_analysis.criteria_checker import FAIL
 
 MAJOR = "major"
 MINOR = "minor"

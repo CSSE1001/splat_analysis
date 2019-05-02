@@ -1,5 +1,5 @@
-import radon_analyser as RA
-import source_deconstructor as SD
+import splat_analysis.radon_analyser as RA
+import splat_analysis.source_deconstructor as SD
 
 class StaticAnalyser:
     def __init__(self, source = ''):

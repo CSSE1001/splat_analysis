@@ -1,4 +1,4 @@
-import source_deconstructor as SD
+import splat_analysis.source_deconstructor as SD
 import re
 
 METRIC = 'metric'
