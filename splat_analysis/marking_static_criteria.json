@@ -1,6 +1,91 @@
 {
   "event_decision.py": [
     {
+      "name": "event_global_usage",
+      "location": "Event",
+      "message": "Event class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "event_decision_global_usage",
+      "location": "EventDecision",
+      "message": "EventDecision class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "user_interaction_global_usage",
+      "location": "UserInteraction",
+      "message": "UserInteraction class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "event_get_time_sloc",
+      "location": "Event.get_time",
+      "message": "Event.get_time is not a 1-liner",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_outdoors_sloc",
+      "location": "Event.get_outdoors",
+      "message": "Event.get_outdoors is not a 1-liner",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_cover_available_sloc",
+      "location": "Event.get_cover_available",
+      "message": "Event.get_cover_available is not a 1-liner",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_get_name_sloc",
+      "location": "Event.get_name",
+      "message": "Event.get_name is not a 1-liner",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 1,
+      "upper": 2
+    },
+    {
+      "name": "event_decision_temperature_sloc",
+      "location": "EventDecision._temperature_factor",
+      "message": "EventDecision._temperature_factor is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 35
+    },
+    {
+      "name": "event_decision_rain_sloc",
+      "location": "EventDecision._rain_factor",
+      "message": "EventDecision._rain_factor is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 15
+    },
+    {
+      "name": "event_decision_advisability_sloc",
+      "location": "EventDecision.advisability",
+      "message": "EventDecision.advisability is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+
+    {
       "name": "event_single_letter_var",
       "location": "Event",
       "message": "Usage of single letter variable in Event",
@@ -16,11 +101,120 @@
     },
 
     {
+      "name": "event_decision_temperature_cc",
+      "location": "EventDecision._temperature_factor",
+      "message": "EventDecision._temperature_factor is overly complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 17
+    },
+    {
+      "name": "event_decision_rain_cc",
+      "location": "EventDecision._rain_factor",
+      "message": "EventDecision._rain_factor is overly complex",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 9
+    },
+
+
+    
+    {
+      "name": "event_init_args",
+      "location": "Event.__init__",
+      "message": "Event.__init__ defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def __init__\\(self,\\s?\\w+\\s?,\\s?\\w+\\s?,\\s?\\w+\\s?,\\s?\\w+\\s?\\)"
+    },
+    {
+      "name": "event_get_time_args",
+      "location": "Event.get_time",
+      "message": "Event.get_time defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def get_time\\(self\\)"
+    },
+    {
+      "name": "event_get_outdoors_args",
+      "location": "Event.get_outdoors",
+      "message": "Event.get_outdoors defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def get_outdoors\\(self\\)"
+    },
+    {
+      "name": "event_get_cover_available_args",
+      "location": "Event.get_cover_available",
+      "message": "Event.get_cover_available defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def get_cover_available\\(self\\)"
+    },
+    {
+      "name": "event_get_name_args",
+      "location": "Event.get_name",
+      "message": "Event.get_name defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def get_name\\(self\\)"
+    },
+    {
+      "name": "event___str___args",
+      "location": "Event.__str__",
+      "message": "Event.__str__ defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def __str__\\(self\\)"
+    },
+
+    {
+      "name": "event_decision_init_args",
+      "location": "EventDecision.__init__",
+      "message": "EventDecision.__init__ defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def __init__\\(self,\\s?\\w+\\s?,\\s?\\w+\\s?\\)"
+    },
+    {
+      "name": "event_decision_temp_args",
+      "location": "EventDecision._temperature_factor",
+      "message": "EventDecision._temperature_factor defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def _temperature_factor\\(self\\)"
+    },
+    {
+      "name": "event_decision_rain_args",
+      "location": "EventDecision._rain_factor",
+      "message": "EventDecision._rain_factor defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def _rain_factor\\(self\\)"
+    },
+    {
+      "name": "event_decision_advisability_args",
+      "location": "EventDecision.advisability",
+      "message": "EventDecision.advisability defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def advisability\\(self\\)"
+    },
+
+
+    {
       "name": "event_decision_event_class",
       "location": "EventDecision",
       "message": "Event class used instead of object in EventDecision",
       "type": "contains",
       "pattern": "(?<!self\\.)(?<!self\\._)\\bEvent\\."
+    },
+
+    {
+      "name": "event_decision_inherits",
+      "location": "EventDecision",
+      "message": "EventDecision inherits from something weird",
+      "type": "contains",
+      "pattern": "class EventDecision\\((?!object).+\\)"
+    },
+    {
+      "name": "user_interaction_inherits",
+      "location": "UserInteraction",
+      "message": "UserInteraction inherits from something weird",
+      "type": "contains",
+      "pattern": "class UserInteraction\\((?!object).+\\)"
     },
 
     {
@@ -36,9 +230,366 @@
       "message": "Event private variables accessed in UserInteraction",
       "type": "contains",
       "pattern": "(?<!self)\\._time|(?<!self)\\._outdoors|(?<!self)\\._cover_available|(?<!self)\\._name"
+    },
+    
+    {
+      "name": "event_init_multi",
+      "location": "Event.__init__",
+      "message": "Event.__init__ is lacking a properly formatted docstring",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 5,
+      "upper": 50
     }
   ],
   "prediction.py": [
+
+    {
+      "name": "weather_prediction_global_usage",
+      "location": "WeatherPrediction",
+      "message": "WeatherPrediction class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "yesterdays_weather_global_usage",
+      "location": "YesterdaysWeather",
+      "message": "YesterdaysWeather class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "simple_prediction_global_usage",
+      "location": "SimplePrediction",
+      "message": "SimplePrediction class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+    {
+      "name": "sophisticated_prediction_global_usage",
+      "location": "SophisticatedPrediction",
+      "message": "SophisticatedPrediction class uses global variables",
+      "type": "contains",
+      "pattern": "\\bglobal\\s"
+    },
+
+    {
+      "name": "simple_prediction_init_sloc",
+      "location": "SimplePrediction.__init__",
+      "message": "SimplePrediction.__init__ is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 4
+    },
+    {
+      "name": "simple_prediction_high_sloc",
+      "location": "SimplePrediction.high_temperature",
+      "message": "SimplePrediction.high_temperature is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+    {
+      "name": "simple_prediction_low_sloc",
+      "location": "SimplePrediction.low_temperature",
+      "message": "SimplePrediction.low_temperature is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 7
+    },
+    {
+      "name": "simple_prediction_humidity_sloc",
+      "location": "SimplePrediction.humidity",
+      "message": "SimplePrediction.humidity is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "simple_prediction_wind_speed_sloc",
+      "location": "SimplePrediction.wind_speed",
+      "message": "SimplePrediction.wind_speed is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "simple_prediction_cloud_cover_sloc",
+      "location": "SimplePrediction.cloud_cover",
+      "message": "SimplePrediction.cloud_cover is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 5
+    },
+    {
+      "name": "sophisticated_prediction_rain_sloc",
+      "location": "SophisticatedPrediction.chance_of_rain",
+      "message": "SophisticatedPrediction.chance_of_rain is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 16
+    },
+    {
+      "name": "sophisticated_prediction_high_sloc",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "SophisticatedPrediction.high_temperature is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_low_sloc",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "SophisticatedPrediction.low_temperature is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_humidity_sloc",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "SophisticatedPrediction.humidity is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 11
+    },
+    {
+      "name": "sophisticated_prediction_wind_sloc",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "SophisticatedPrediction.wind_speed is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 10
+    },
+    {
+      "name": "sophisticated_prediction_cloud_sloc",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "SophisticatedPrediction.cloud_cover is too long",
+      "type": "metric",
+      "metric": "sloc",
+      "lower": 0,
+      "upper": 9
+    },
+
+    {
+      "name": "simple_prediction_rain_cc",
+      "location": "SimplePrediction.chance_of_rain",
+      "message": "SimplePrediction.chance_of_rain is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_high_cc",
+      "location": "SimplePrediction.high_temperature",
+      "message": "SimplePrediction.high_temperature is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_low_cc",
+      "location": "SimplePrediction.low_temperature",
+      "message": "SimplePrediction.low_temperature is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_humidity_cc",
+      "location": "SimplePrediction.humidity",
+      "message": "SimplePrediction.humidity is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_wind_speed_cc",
+      "location": "SimplePrediction.wind_speed",
+      "message": "SimplePrediction.wind_speed is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+    {
+      "name": "simple_prediction_cloud_cover_cc",
+      "location": "SimplePrediction.cloud_cover",
+      "message": "SimplePrediction.cloud_cover is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3
+    },
+
+
+    {
+      "name": "sophisticated_prediction_high_cc",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "SophisticatedPrediction.high_temperature is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3,
+      "hide": true
+    },
+    {
+      "name": "sophisticated_prediction_low_cc",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "SophisticatedPrediction.low_temperature is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3,
+      "hide": true
+    },
+    {
+      "name": "sophisticated_prediction_humidity_cc",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "SophisticatedPrediction.humidity is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 4,
+      "hide": true
+    },
+    {
+      "name": "sophisticated_prediction_wind_speed_cc",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "SophisticatedPrediction.wind_speed is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 2,
+      "hide": true
+    },
+    {
+      "name": "sophisticated_prediction_cloud_cover_cc",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "SophisticatedPrediction.cloud_cover is overly complex or uses weird constructs",
+      "type": "metric",
+      "metric": "cc",
+      "lower": 0,
+      "upper": 3,
+      "hide": true
+    },
+
+    {
+      "name": "simple_init_args",
+      "location": "SimplePrediction.__init__",
+      "message": "SimplePrediction.__init__ defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def __init__\\(self,\\s?\\w+\\s?,\\s?\\w+\\s?\\)"
+    },
+    {
+      "name": "simple_chance_of_rain_args",
+      "location": "SimplePrediction.chance_of_rain",
+      "message": "SimplePrediction.chance_of_rain defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def chance_of_rain\\(self\\)"
+    },
+    {
+      "name": "simple_high_temperature_args",
+      "location": "SimplePrediction.high_temperature",
+      "message": "SimplePrediction.high_temperature defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def high_temperature\\(self\\)"
+    },
+    {
+      "name": "simple_low_temperature_args",
+      "location": "SimplePrediction.low_temperature",
+      "message": "SimplePrediction.low_temperature defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def low_temperature\\(self\\)"
+    },
+    {
+      "name": "simple_humidity_args",
+      "location": "SimplePrediction.humidity",
+      "message": "SimplePrediction.humidity defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def humidity\\(self\\)"
+    },
+    {
+      "name": "simple_wind_speed_args",
+      "location": "SimplePrediction.wind_speed",
+      "message": "SimplePrediction.wind_speed defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def wind_speed\\(self\\)"
+    },
+    {
+      "name": "simple_cloud_cover_args",
+      "location": "SimplePrediction.cloud_cover",
+      "message": "SimplePrediction.cloud_cover defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def cloud_cover\\(self\\)"
+    },
+
+    {
+      "name": "sophisticated_init_args",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "SophisticatedPrediction.__init__ defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def __init__\\(self,\\s?\\w+\\s?,\\s?\\w+\\s?\\)"
+    },
+    {
+      "name": "sophisticated_chance_of_rain_args",
+      "location": "SophisticatedPrediction.chance_of_rain",
+      "message": "SophisticatedPrediction.chance_of_rain defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def chance_of_rain\\(self\\)"
+    },
+    {
+      "name": "sophisticated_high_temperature_args",
+      "location": "SophisticatedPrediction.high_temperature",
+      "message": "SophisticatedPrediction.high_temperature defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def high_temperature\\(self\\)"
+    },
+    {
+      "name": "sophisticated_low_temperature_args",
+      "location": "SophisticatedPrediction.low_temperature",
+      "message": "SophisticatedPrediction.low_temperature defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def low_temperature\\(self\\)"
+    },
+    {
+      "name": "sophisticated_humidity_args",
+      "location": "SophisticatedPrediction.humidity",
+      "message": "SophisticatedPrediction.humidity defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def humidity\\(self\\)"
+    },
+    {
+      "name": "sophisticated_wind_speed_args",
+      "location": "SophisticatedPrediction.wind_speed",
+      "message": "SophisticatedPrediction.wind_speed defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def wind_speed\\(self\\)"
+    },
+    {
+      "name": "sophisticated_cloud_cover_args",
+      "location": "SophisticatedPrediction.cloud_cover",
+      "message": "SophisticatedPrediction.cloud_cover defined incorrectly",
+      "type": "not_contains",
+      "pattern": "def cloud_cover\\(self\\)"
+    },
+
+
     {
       "name": "simple_single_letter_var",
       "location": "SimplePrediction",
@@ -83,6 +634,7 @@
       "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherData\\."
     },
 
+
     {
       "name": "simple_inherit_weather",
       "location": "SimplePrediction",
@@ -102,8 +654,7 @@
       "location": "SophisticatedPrediction",
       "message": "SophisticatedPrediction does inherit from SimplePrediction",
       "type": "not_contains",
-      "pattern": "class SophisticatedPrediction(SimplePrediction)",
-      "hide": true
+      "pattern": "class SophisticatedPrediction(SimplePrediction)"
     },
     {
       "name": "sophisticated_get_number_days_not_exists",
@@ -126,6 +677,14 @@
       "pattern": "super()\\.__init__"
     },
     {
+      "name": "sophisticated_direct_assign_number_days",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "SophisticatedPrediction directly assigns number_days",
+      "type": "contains",
+      "pattern": "(self._number_days|self._num_days|self._n|self._size) ="
+    },
+
+    {
       "name": "simple_weather_data_private_vars",
       "location": "SimplePrediction",
       "message": "WeatherDataItem private variables accessed in SimplePrediction",
@@ -138,6 +697,27 @@
       "message": "WeatherDataItem private variables accessed in SophisticatedPrediction",
       "type": "contains",
       "pattern": "(?<!self)\\._rain|(?<!self)\\._temperature_high|(?<!self)\\._temperature_low|(?<!self)\\._humidity|(?<!self)\\._wind_speed_average|(?<!self)\\._wind_speed_max|(?<!self)\\._wind_direction|(?<!self)\\._cloud_cover|(?<!self)\\._air_pressure"
+    },
+    
+    {
+      "name": "simple_init_multi",
+      "location": "SimplePrediction.__init__",
+      "message": "SimplePrediction.__init__ is lacking a properly formatted docstring",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 5,
+      "upper": 50
+    },
+    {
+      "name": "sophisticated_init_multi",
+      "location": "SophisticatedPrediction.__init__",
+      "message": "SophisticatedPrediction.__init__ is lacking a properly formatted docstring",
+      "type": "metric",
+      "metric": "multi",
+      "lower": 5,
+      "upper": 50
     }
+    
+
   ]
 }

@@ -66,7 +66,7 @@ class StaticAnalyser:
 
 if __name__ == '__main__':
 
-    FILE = 'python_sources/a2_test/event_decision.py'
+    FILE = 'event_decision.py'
     with open(FILE) as file:
         source = file.read()
 

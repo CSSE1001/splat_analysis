@@ -153,10 +153,10 @@ class Analyser:
 #     with open('prediction.py') as prediction, open('event_decision.py') as event:
 #         sources['prediction.py'] = prediction.read()
 #         sources['event_decision.py'] = event.read()
-
+#
 #     from pprint import pprint
 #     a = Analyser(sources)
 #     a.analyse()
-    # pprint(a.get_static_results())
-    # pprint(a.get_static_messages())
-    # pprint(a.get_rubric_data())
+#     # pprint(a.get_static_results())
+#     pprint(a.get_static_messages())
+#     pprint(a.get_rubric_data())

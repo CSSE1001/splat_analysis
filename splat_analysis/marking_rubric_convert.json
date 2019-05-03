@@ -1,16 +1,47 @@
 {
   "program_structured_readable": {
-    "rules": {},
+    "rules": {
+      "event_global_usage": "global",
+      "event_decision_global_usage": "global",
+      "user_interaction_global_usage": "global",
+      "weather_prediction_global_usage": "global",
+      "yesterdays_weather_global_usage": "global",
+      "simple_prediction_global_usage": "global",
+      "sophisticated_prediction_global_usage": "global",
+
+      "event_get_time_sloc": "getter",
+      "event_get_outdoors_sloc": "getter",
+      "event_get_cover_available_sloc": "getter",
+      "event_get_name_sloc": "getter",
+      "event_decision_temperature_sloc": "minor",
+      "event_decision_rain_sloc": "minor",
+      "event_decision_advisability_sloc": "minor",
+
+      "simple_prediction_high_sloc": "minor",
+      "simple_prediction_init_sloc": "minor",
+      "simple_prediction_low_sloc": "minor",
+      "simple_prediction_humidity_sloc": "minor",
+      "simple_prediction_wind_speed_sloc": "minor",
+      "simple_prediction_cloud_cover_sloc": "minor",
+      "sophisticated_prediction_rain_sloc": "minor",
+      "sophisticated_prediction_high_sloc": "minor",
+      "sophisticated_prediction_low_sloc": "minor",
+      "sophisticated_prediction_humidity_sloc": "minor",
+      "sophisticated_prediction_wind_sloc": "minor",
+      "sophisticated_prediction_cloud_sloc": "minor"
+    },
     "acceptable": [
       {
         "score": 1,
-        "major": 0,
-        "minor": 0
+        "global": 0,
+        "getter": 0,
+        "minor": 2
       },
       {
         "score": 0.5,
-        "major": 2,
-        "minor": 0
+        "global": 0,
+        "getter": 4,
+        "minor": 8
       }
     ]
   },
@@ -35,32 +66,77 @@
     ]
   },
   "algorithmic_logic": {
-    "rules": {},
+    "rules": {
+      "event_decision_temperature_cc": "minor",
+      "event_decision_rain_cc": "minor",
+      "simple_prediction_rain_cc": "minor",
+      "simple_prediction_high_cc": "minor",
+      "simple_prediction_low_cc": "minor",
+      "simple_prediction_humidity_cc": "minor",
+      "simple_prediction_wind_speed_cc": "minor",
+      "simple_prediction_cloud_cover_cc": "minor"
+    },
     "acceptable": [
       {
         "score": 1,
-        "major": 0,
-        "minor": 0
+        "minor": 4
       },
       {
         "score": 0.5,
-        "major": 2,
-        "minor": 0
+        "minor": 8
       }
     ]
   },
   "methods_well_designed": {
-    "rules": {},
+    "rules": {
+      "sophisticated_prediction_humidity_cc": "simplify",
+      "sophisticated_prediction_wind_speed_cc": "simplify",
+      "sophisticated_prediction_cloud_cover_cc": "simplify",
+
+      "event_init_args": "major",
+      "event_get_time_args": "major",
+      "event_get_outdoors_args": "major",
+      "event_get_cover_available_args": "major",
+      "event_get_name_args": "major",
+      "event___str___args": "major",
+
+      "event_decision_init_args": "major",
+      "event_decision_temp_args": "major",
+      "event_decision_rain_args": "major",
+      "event_decision_advisability_args": "major",
+
+      "simple_init_args": "major",
+      "simple_chance_of_rain_args": "major",
+      "simple_high_temperature_args": "major",
+      "simple_low_temperature_args": "major",
+      "simple_humidity_args": "major",
+      "simple_wind_speed_args": "major",
+      "simple_cloud_cover_args": "major",
+
+      "sophisticated_init_args": "major",
+      "sophisticated_chance_of_rain_args": "major",
+      "sophisticated_high_temperature_args": "major",
+      "sophisticated_low_temperature_args": "major",
+      "sophisticated_humidity_args": "major",
+      "sophisticated_wind_speed_args": "major",
+      "sophisticated_cloud_cover_args": "major"
+
+    },
     "acceptable": [
       {
         "score": 1,
-        "major": 0,
-        "minor": 0
+        "simplify": 0,
+        "major": 0
+      },
+      {
+        "score": 0.75,
+        "simplify": 3,
+        "major": 0
       },
       {
         "score": 0.5,
-        "major": 2,
-        "minor": 0
+        "simplify": 3,
+        "major": 2
       }
     ]
   },
@@ -89,15 +165,18 @@
     "rules": {
       "event_decision_event_private_vars": "major",
       "user_interaction_event_private_vars": "major",
-      "simple_weather_data_item_class": "major",
-      "sophisticated_weather_data_item_class": "major",
-      "simple_weather_data_class": "major",
-      "sophisticated_weather_data_class": "major",
 
       "simple_inherit_weather": "major",
+      "sophisticated_inherit_simple": "sophisticated_inherit_simple",
 
-      "sophisticated_not_inherit_simple": "special",
-      "sophisticated_get_number_days_not_exists": "special",
+      "event_decision_inherits": "major",
+      "user_interaction_inherits": "major",
+
+      "sophisticated_not_inherit_simple": "inherited_method",
+      "sophisticated_get_number_days_not_exists": "inherited_method",
+
+      "#sophisticated_not_inherit_simple": "reassign_super",
+      "sophisticated_direct_assign_number_days": "reassign_super",
 
       "simple_super_init": "major",
       "sophisticated_super_init": "major",
@@ -110,13 +189,23 @@
       {
         "score": 1,
         "major": 0,
-        "minor": 0,
-        "special": 1
+        "sophisticated_inherit_simple": 0,
+        "inherited_method": 1,
+        "reassign_super": 1
+      },
+      {
+        "score": 1,
+        "major": 0,
+        "sophisticated_inherit_simple": 1,
+        "inherited_method": 1,
+        "reassign_super": 1
       },
       {
         "score": 0.5,
-        "major": 2,
-        "minor": 0
+        "major": 4,
+        "sophisticated_inherit_simple": 1,
+        "inherited_method": 2,
+        "reassign_super": 2
       }
     ]
   }
