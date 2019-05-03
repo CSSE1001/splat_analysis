@@ -1,22 +1,24 @@
 from splat_analysis.criteria_checker import FAIL
 
-MAJOR = "major"
-MINOR = "minor"
-
 class RubricConverter:
 
     def __init__(self, rubric, static_res):
         self._rubric = rubric
         self._static_res = static_res
 
-
     def convert(self):
         res = {}
         for criterion in self._rubric:
 
-            fails = {MAJOR: 0, MINOR: 0}
+            fails = {}
             for rule in self._rubric[criterion]['rules']:
-                if self._static_res[rule]['status'] == FAIL:
+                #Allows you to have 'duplicate' key in JSON if you pad with '#'
+                static_rule_key = rule.replace('#', '')
+                if self._static_res[static_rule_key]['status'] == FAIL:
+
+                    if not self._rubric[criterion]['rules'][rule] in fails:
+                        fails[self._rubric[criterion]['rules'][rule]] = 0    
+
                     fails[self._rubric[criterion]['rules'][rule]] += 1
 
             score = 0

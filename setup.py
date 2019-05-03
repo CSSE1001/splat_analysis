@@ -8,4 +8,9 @@ setup(
    author_email='rudiscarpa96@gmail.com',
    packages=['splat_analysis'],
    install_requires=['radon', 'astor'],
+   entry_points={
+      'console_scripts': [
+         'splat_analysis = splat_analysis.cmd:splat_analysis_cli'
+      ]
+   }
 )

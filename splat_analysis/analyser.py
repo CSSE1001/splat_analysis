@@ -112,11 +112,13 @@ class Analyser:
         """
         Returns a list of strings that contain all the filtered messages
         to display to the marker. Literally just filtered messages from
-        the above method, based on which were failed
+        the above method, based on which were failed and if they should display
+        or be hidden
         """
         return [rule['message']
                 for rule in self.get_static_results()
-                if rule['status'] == CC.FAIL]
+                if rule['status'] == CC.FAIL
+                and 'hide' not in rule]
 
     def get_rubric_data(self):
         """
@@ -144,6 +146,7 @@ class Analyser:
 
     def get_score(self):
         return self._score
+
 
 # if __name__ == '__main__':
 #     sources = {}

@@ -86,12 +86,32 @@
     ]
   },
   "encapsulation_inheritance": {
-    "rules": {},
+    "rules": {
+      "event_decision_event_private_vars": "major",
+      "user_interaction_event_private_vars": "major",
+      "simple_weather_data_item_class": "major",
+      "sophisticated_weather_data_item_class": "major",
+      "simple_weather_data_class": "major",
+      "sophisticated_weather_data_class": "major",
+
+      "simple_inherit_weather": "major",
+
+      "sophisticated_not_inherit_simple": "special",
+      "sophisticated_get_number_days_not_exists": "special",
+
+      "simple_super_init": "major",
+      "sophisticated_super_init": "major",
+
+      "simple_weather_data_private_vars": "major",
+      "sophisticated_weather_data_private_vars": "major"
+
+    },
     "acceptable": [
       {
         "score": 1,
         "major": 0,
-        "minor": 0
+        "minor": 0,
+        "special": 1
       },
       {
         "score": 0.5,

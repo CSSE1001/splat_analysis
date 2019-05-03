@@ -8,7 +8,9 @@ radon: https://pypi.org/project/radon/
 astor: https://pypi.org/project/astor/
 
 For me was:
+
     pip install radon
+ 
     pip install astor
 
 pylint was giving me the business for some reason so I might add that in

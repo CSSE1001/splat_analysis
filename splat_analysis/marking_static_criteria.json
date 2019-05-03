@@ -98,6 +98,20 @@
       "pattern": "class SophisticatedPrediction(SimplePrediction)"
     },
     {
+      "name": "sophisticated_not_inherit_simple",
+      "location": "SophisticatedPrediction",
+      "message": "SophisticatedPrediction does inherit from SimplePrediction",
+      "type": "not_contains",
+      "pattern": "class SophisticatedPrediction(SimplePrediction)",
+      "hide": true
+    },
+    {
+      "name": "sophisticated_get_number_days_not_exists",
+      "location": "SophisticatedPrediction.get_number_days",
+      "message": "SophisticatedPrediction explicitly defines get_number_days",
+      "type": "not_exists"
+    },
+    {
       "name": "simple_super_init",
       "location": "SimplePrediction.__init__",
       "message": "SimplePrediction does not call super().__init__",
@@ -124,12 +138,6 @@
       "message": "WeatherDataItem private variables accessed in SophisticatedPrediction",
       "type": "contains",
       "pattern": "(?<!self)\\._rain|(?<!self)\\._temperature_high|(?<!self)\\._temperature_low|(?<!self)\\._humidity|(?<!self)\\._wind_speed_average|(?<!self)\\._wind_speed_max|(?<!self)\\._wind_direction|(?<!self)\\._cloud_cover|(?<!self)\\._air_pressure"
-    },
-    {
-      "name": "sophisticated_get_number_days_exists",
-      "location": "SophisticatedPrediction.get_number_days",
-      "message": "SophisticatedPrediction explicitly defines get_number_days",
-      "type": "not_exists"
     }
   ]
 }
