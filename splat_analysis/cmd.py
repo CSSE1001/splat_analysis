@@ -21,8 +21,8 @@ def splat_analysis_cli():
     """
     args = sys.argv[1:]
     if len(args) != 2:
-        print('Incorrect args - usage: splat_analysis path_to_submission_dir (-static | -messages | -rubric)')
-        return 1
+        print('Incorrect args - usage: splat_analysis path_to_submission_dir (-static | -messages | -rubric | -all)', file=sys.stderr)
+        return 2
 
     sources = {}
 
@@ -35,16 +35,24 @@ def splat_analysis_cli():
             with open(file_path) as sub_file:
                 sources[file_name] = sub_file.read()
         except IOError:
-            print('Error trying to read file at address:', file_path)
-            return 2
+            print('Error trying to read file at address:', file_path, file=sys.stderr)
+            return 3
 
     analyser = Analyser(sources)
     analyser.analyse()
+    
 
-    #echo out appropriate json based on cli arg
-    method = ARG_OPTIONS[args[1]]
-    data = getattr(analyser, method)()
-    print(json.dumps(data))
+
+    if args[1] == '-all':
+        data = {key[1:]: getattr(analyser, method)() for key, method in ARG_OPTIONS.items()}
+    else:
+        method = ARG_OPTIONS[args[1]]
+        data = getattr(analyser, method)()
+    
+    print(json.dumps(data, sort_keys=True, indent=4))
     return 0
+
+if __name__ == "__main__":
+    exit(splat_analysis_cli())
     
 
