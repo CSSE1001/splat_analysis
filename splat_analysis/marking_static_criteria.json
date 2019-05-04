@@ -658,16 +658,16 @@
     {
       "name": "simple_super_init",
       "location": "SimplePrediction.__init__",
-      "message": "SimplePrediction does not call super().__init__",
+      "message": "SimplePrediction does not call super\\(\\).__init__",
       "type": "contains",
-      "pattern": "super()\\.__init__"
+      "pattern": "super\\(\\)\\.__init__"
     },
     {
       "name": "sophisticated_super_init",
       "location": "SophisticatedPrediction.__init__",
-      "message": "SophisticatedPrediction does not call super().__init__",
+      "message": "SophisticatedPrediction does not call super\\(\\).__init__",
       "type": "contains",
-      "pattern": "super()\\.__init__"
+      "pattern": "super\\(\\)\\.__init__"
     },
     {
       "name": "sophisticated_direct_assign_number_days",
