@@ -120,7 +120,6 @@
       "sophisticated_humidity_args": "major",
       "sophisticated_wind_speed_args": "major",
       "sophisticated_cloud_cover_args": "major"
-
     },
     "acceptable": [
       {
@@ -183,7 +182,6 @@
 
       "simple_weather_data_private_vars": "major",
       "sophisticated_weather_data_private_vars": "major"
-
     },
     "acceptable": [
       {
@@ -194,7 +192,7 @@
         "reassign_super": 1
       },
       {
-        "score": 1,
+        "score": 0.75,
         "major": 0,
         "sophisticated_inherit_simple": 1,
         "inherited_method": 1,

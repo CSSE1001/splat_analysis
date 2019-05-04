@@ -103,11 +103,11 @@
     {
       "name": "event_decision_temperature_cc",
       "location": "EventDecision._temperature_factor",
-      "message": "EventDecision._temperature_factor is overly complex",
+      "message": "EventDecision._temperature_factor is overly complex - excessive use of if statements and/or conditionals",
       "type": "metric",
       "metric": "cc",
       "lower": 0,
-      "upper": 17
+      "upper": 20
     },
     {
       "name": "event_decision_rain_cc",
@@ -119,8 +119,6 @@
       "upper": 9
     },
 
-
-    
     {
       "name": "event_init_args",
       "location": "Event.__init__",
@@ -193,7 +191,6 @@
       "pattern": "def advisability\\(self\\)"
     },
 
-
     {
       "name": "event_decision_event_class",
       "location": "EventDecision",
@@ -231,7 +228,7 @@
       "type": "contains",
       "pattern": "(?<!self)\\._time|(?<!self)\\._outdoors|(?<!self)\\._cover_available|(?<!self)\\._name"
     },
-    
+
     {
       "name": "event_init_multi",
       "location": "Event.__init__",
@@ -243,7 +240,6 @@
     }
   ],
   "prediction.py": [
-
     {
       "name": "weather_prediction_global_usage",
       "location": "WeatherPrediction",
@@ -279,8 +275,8 @@
       "message": "SimplePrediction.__init__ is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
-      "upper": 4
+      "lower": 1,
+      "upper": 7
     },
     {
       "name": "simple_prediction_high_sloc",
@@ -288,7 +284,7 @@
       "message": "SimplePrediction.high_temperature is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 1,
       "upper": 7
     },
     {
@@ -297,7 +293,7 @@
       "message": "SimplePrediction.low_temperature is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 1,
       "upper": 7
     },
     {
@@ -306,8 +302,8 @@
       "message": "SimplePrediction.humidity is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
-      "upper": 5
+      "lower": 1,
+      "upper": 6
     },
     {
       "name": "simple_prediction_wind_speed_sloc",
@@ -315,8 +311,8 @@
       "message": "SimplePrediction.wind_speed is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
-      "upper": 5
+      "lower": 1,
+      "upper": 6
     },
     {
       "name": "simple_prediction_cloud_cover_sloc",
@@ -324,61 +320,61 @@
       "message": "SimplePrediction.cloud_cover is too long",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
-      "upper": 5
+      "lower": 1,
+      "upper": 6
     },
     {
       "name": "sophisticated_prediction_rain_sloc",
       "location": "SophisticatedPrediction.chance_of_rain",
-      "message": "SophisticatedPrediction.chance_of_rain is too long",
+      "message": "SophisticatedPrediction.chance_of_rain is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 7,
       "upper": 16
     },
     {
       "name": "sophisticated_prediction_high_sloc",
       "location": "SophisticatedPrediction.high_temperature",
-      "message": "SophisticatedPrediction.high_temperature is too long",
+      "message": "SophisticatedPrediction.high_temperature is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 3,
       "upper": 10
     },
     {
       "name": "sophisticated_prediction_low_sloc",
       "location": "SophisticatedPrediction.low_temperature",
-      "message": "SophisticatedPrediction.low_temperature is too long",
+      "message": "SophisticatedPrediction.low_temperature is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 3,
       "upper": 10
     },
     {
       "name": "sophisticated_prediction_humidity_sloc",
       "location": "SophisticatedPrediction.humidity",
-      "message": "SophisticatedPrediction.humidity is too long",
+      "message": "SophisticatedPrediction.humidity is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 5,
       "upper": 11
     },
     {
       "name": "sophisticated_prediction_wind_sloc",
       "location": "SophisticatedPrediction.wind_speed",
-      "message": "SophisticatedPrediction.wind_speed is too long",
+      "message": "SophisticatedPrediction.wind_speed is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 5,
       "upper": 10
     },
     {
       "name": "sophisticated_prediction_cloud_sloc",
       "location": "SophisticatedPrediction.cloud_cover",
-      "message": "SophisticatedPrediction.cloud_cover is too long",
+      "message": "SophisticatedPrediction.cloud_cover is too long or unfinished",
       "type": "metric",
       "metric": "sloc",
-      "lower": 0,
+      "lower": 5,
       "upper": 9
     },
 
@@ -437,7 +433,6 @@
       "upper": 3
     },
 
-
     {
       "name": "sophisticated_prediction_high_cc",
       "location": "SophisticatedPrediction.high_temperature",
@@ -461,17 +456,17 @@
     {
       "name": "sophisticated_prediction_humidity_cc",
       "location": "SophisticatedPrediction.humidity",
-      "message": "SophisticatedPrediction.humidity is overly complex or uses weird constructs",
+      "message": "SophisticatedPrediction.humidity is overly complex - has most likely not used any inheritance or average simplification",
       "type": "metric",
       "metric": "cc",
       "lower": 0,
-      "upper": 4,
+      "upper": 5,
       "hide": true
     },
     {
       "name": "sophisticated_prediction_wind_speed_cc",
       "location": "SophisticatedPrediction.wind_speed",
-      "message": "SophisticatedPrediction.wind_speed is overly complex or uses weird constructs",
+      "message": "SophisticatedPrediction.wind_speed is overly complex - has most likely not used any inheritance or average simplification",
       "type": "metric",
       "metric": "cc",
       "lower": 0,
@@ -481,7 +476,7 @@
     {
       "name": "sophisticated_prediction_cloud_cover_cc",
       "location": "SophisticatedPrediction.cloud_cover",
-      "message": "SophisticatedPrediction.cloud_cover is overly complex or uses weird constructs",
+      "message": "SophisticatedPrediction.cloud_cover is overly complex - has most likely not used any inheritance or average simplification",
       "type": "metric",
       "metric": "cc",
       "lower": 0,
@@ -589,7 +584,6 @@
       "pattern": "def cloud_cover\\(self\\)"
     },
 
-
     {
       "name": "simple_single_letter_var",
       "location": "SimplePrediction",
@@ -634,7 +628,6 @@
       "pattern": "(?<!self\\.)(?<!self\\._)\\bWeatherData\\."
     },
 
-
     {
       "name": "simple_inherit_weather",
       "location": "SimplePrediction",
@@ -646,14 +639,14 @@
       "name": "sophisticated_inherit_simple",
       "location": "SophisticatedPrediction",
       "message": "SophisticatedPrediction does not inherit from SimplePrediction",
-      "type": "contains",
+      "type": "not_contains",
       "pattern": "class SophisticatedPrediction(SimplePrediction)"
     },
     {
       "name": "sophisticated_not_inherit_simple",
       "location": "SophisticatedPrediction",
       "message": "SophisticatedPrediction does inherit from SimplePrediction",
-      "type": "not_contains",
+      "type": "contains",
       "pattern": "class SophisticatedPrediction(SimplePrediction)"
     },
     {
@@ -698,14 +691,14 @@
       "type": "contains",
       "pattern": "(?<!self)\\._rain|(?<!self)\\._temperature_high|(?<!self)\\._temperature_low|(?<!self)\\._humidity|(?<!self)\\._wind_speed_average|(?<!self)\\._wind_speed_max|(?<!self)\\._wind_direction|(?<!self)\\._cloud_cover|(?<!self)\\._air_pressure"
     },
-    
+
     {
       "name": "simple_init_multi",
       "location": "SimplePrediction.__init__",
       "message": "SimplePrediction.__init__ is lacking a properly formatted docstring",
       "type": "metric",
       "metric": "multi",
-      "lower": 5,
+      "lower": 4,
       "upper": 50
     },
     {
@@ -714,10 +707,8 @@
       "message": "SophisticatedPrediction.__init__ is lacking a properly formatted docstring",
       "type": "metric",
       "metric": "multi",
-      "lower": 5,
+      "lower": 4,
       "upper": 50
     }
-    
-
   ]
 }
