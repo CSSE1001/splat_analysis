@@ -21,8 +21,8 @@ def splat_analysis_cli():
     """
     args = sys.argv[1:]
     if len(args) != 2:
-        print('Incorrect args - usage: splat_analysis path_to_submission_dir (-static | -messages | -rubric | -all)')
-        return 1
+        print('Incorrect args - usage: splat_analysis path_to_submission_dir (-static | -messages | -rubric | -all)', file=sys.stderr)
+        return 2
 
     sources = {}
 
@@ -35,8 +35,8 @@ def splat_analysis_cli():
             with open(file_path) as sub_file:
                 sources[file_name] = sub_file.read()
         except IOError:
-            print('Error trying to read file at address:', file_path)
-            return 2
+            print('Error trying to read file at address:', file_path, file=sys.stderr)
+            return 3
 
     analyser = Analyser(sources)
     analyser.analyse()
@@ -53,6 +53,6 @@ def splat_analysis_cli():
     return 0
 
 if __name__ == "__main__":
-    splat_analysis_cli()
+    exit(splat_analysis_cli())
     
 
