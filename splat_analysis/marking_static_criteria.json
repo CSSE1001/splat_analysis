@@ -64,7 +64,7 @@
       "type": "metric",
       "metric": "sloc",
       "lower": 0,
-      "upper": 35
+      "upper": 37
     },
     {
       "name": "event_decision_rain_sloc",
@@ -276,7 +276,7 @@
       "type": "metric",
       "metric": "sloc",
       "lower": 1,
-      "upper": 7
+      "upper": 8
     },
     {
       "name": "simple_prediction_high_sloc",
