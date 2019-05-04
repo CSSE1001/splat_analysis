@@ -633,21 +633,21 @@
       "location": "SimplePrediction",
       "message": "SimplePrediction does not inherit from WeatherPrediction",
       "type": "contains",
-      "pattern": "class SimplePrediction(WeatherPrediction)"
+      "pattern": "class SimplePrediction\\(WeatherPrediction\\)"
     },
     {
       "name": "sophisticated_inherit_simple",
       "location": "SophisticatedPrediction",
       "message": "SophisticatedPrediction does not inherit from SimplePrediction",
       "type": "not_contains",
-      "pattern": "class SophisticatedPrediction(SimplePrediction)"
+      "pattern": "class SophisticatedPrediction\\(SimplePrediction\\)"
     },
     {
       "name": "sophisticated_not_inherit_simple",
       "location": "SophisticatedPrediction",
       "message": "SophisticatedPrediction does inherit from SimplePrediction",
       "type": "contains",
-      "pattern": "class SophisticatedPrediction(SimplePrediction)"
+      "pattern": "class SophisticatedPrediction\\(SimplePrediction\\)"
     },
     {
       "name": "sophisticated_get_number_days_not_exists",
@@ -659,14 +659,14 @@
       "name": "simple_super_init",
       "location": "SimplePrediction.__init__",
       "message": "SimplePrediction does not call super().__init__",
-      "type": "contains",
+      "type": "not_contains",
       "pattern": "super\\(\\)\\.__init__"
     },
     {
       "name": "sophisticated_super_init",
       "location": "SophisticatedPrediction.__init__",
       "message": "SophisticatedPrediction does not call super().__init__",
-      "type": "contains",
+      "type": "not_contains",
       "pattern": "super\\(\\)\\.__init__"
     },
     {
