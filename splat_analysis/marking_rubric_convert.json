@@ -35,13 +35,13 @@
         "score": 1,
         "global": 0,
         "getter": 0,
-        "minor": 2
+        "minor": 5
       },
       {
         "score": 0.5,
         "global": 0,
         "getter": 4,
-        "minor": 8
+        "minor": 12
       }
     ]
   },
@@ -196,7 +196,7 @@
         "major": 0,
         "sophisticated_inherit_simple": 1,
         "inherited_method": 1,
-        "reassign_super": 1
+        "reassign_super": 2
       },
       {
         "score": 0.5,
