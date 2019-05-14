@@ -192,11 +192,27 @@
     },
 
     {
+      "name": "event_event_class",
+      "location": "Event",
+      "message": "Event class used instead of object in Event",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bEvent\\."
+    },
+    
+    {
       "name": "event_decision_event_class",
       "location": "EventDecision",
       "message": "Event class used instead of object in EventDecision",
       "type": "contains",
       "pattern": "(?<!self\\.)(?<!self\\._)\\bEvent\\."
+    },
+
+    {
+      "name": "event_decision_event_decision_class",
+      "location": "EventDecision",
+      "message": "EventDecision class used instead of object in EventDecision",
+      "type": "contains",
+      "pattern": "(?<!self\\.)(?<!self\\._)\\bEventDecision\\."
     },
 
     {
