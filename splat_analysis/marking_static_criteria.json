@@ -632,7 +632,7 @@
       "name": "simple_inherit_weather",
       "location": "SimplePrediction",
       "message": "SimplePrediction does not inherit from WeatherPrediction",
-      "type": "contains",
+      "type": "not_contains",
       "pattern": "class SimplePrediction\\(WeatherPrediction\\)"
     },
     {
