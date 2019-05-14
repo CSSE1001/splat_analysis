@@ -616,6 +616,21 @@
     },
 
     {
+      "name": "simple_single_letter_loop_var",
+      "location": "SimplePrediction",
+      "message": "Single letter loop variable in SimplePrediction - Check if index",
+      "type": "contains",
+      "pattern": "for\\s+[a-zA-z]\\s+in\\s+"
+    },
+    {
+      "name": "sophisticated_single_letter_loop_var",
+      "location": "SophisticatedPrediction",
+      "message": "Single letter loop variable in SophisticatedPrediction - Check if index",
+      "type": "contains",
+      "pattern": "for\\s+[a-zA-z]\\s+in\\s+"
+    },
+
+    {
       "name": "simple_weather_data_item_class",
       "location": "SimplePrediction",
       "message": "WeatherDataItem class used instead of object in SimplePrediction",
